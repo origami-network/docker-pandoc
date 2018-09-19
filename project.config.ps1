@@ -1,8 +1,9 @@
-$script:PandocVersion = "2.2.3.2"
+$script:PandocVersion = "2.3"
+$script:PandocVersionSufix = ".0.0"
 $script:Revision = 0
 
 @{
-    Version = "$($script:PandocVersion).$($script:Revision)"
+    Version = "$($script:PandocVersion)$($script:PandocVersionSufix).$($script:Revision)"
 
     Image = @{
         Name = "origaminetwork/pandoc"
