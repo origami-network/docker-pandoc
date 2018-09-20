@@ -4,20 +4,17 @@ ARG ARG_PANDOC_VERSION
 ARG ARG_PANDOC_URL="https://github.com/jgm/pandoc/releases/download/${ARG_PANDOC_VERSION}/pandoc-${ARG_PANDOC_VERSION}-windows-x86_64.zip"
 ARG ARG_PANDOC_PATH=C:\\Pandoc
 
+COPY Install C:\\Install\\
+
 RUN powershell.exe -Command $ErrorActionPreference = 'Stop' ; \
-  $filePath = Join-Path $env:TEMP pandoc.zip ; \
-  [Net.ServicePointManager]::SecurityProtocol = 'Tls', 'Tls11', 'Tls12' ; \
-  Invoke-WebRequest $env:ARG_PANDOC_URL -OutFile $filePath ; \
-  Expand-Archive -Path $filePath -DestinationPath $env:ARG_PANDOC_PATH ; \
-  $subPath = Join-Path $env:ARG_PANDOC_PATH 'pandoc-*' ; \
-  Rename-Item $subPath 'package'
+  C:\\Install\\Install-ZipPackage.ps1 $env:ARG_PANDOC_URL -DestinationPath $env:ARG_PANDOC_PATH -Verbose
 
 
 FROM microsoft/windowsservercore:ltsc2016
 
 ARG ARG_PANDOC_PATH=C:\\Pandoc
 
-# TODO: install Pandoc
+COPY --from=pandoc ${ARG_PANDOC_PATH} ${ARG_PANDOC_PATH}
 
 WORKDIR ${ARG_PANDOC_PATH}
 
