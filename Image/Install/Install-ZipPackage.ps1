@@ -22,6 +22,6 @@ Write-Verbose "Zip Package: Expand"
 $packagePath = Join-Path $env:TEMP $packageName
 Expand-Archive -Path $packageFile -DestinationPath $packagePath
 
-Write-Verbose "Zip Package: Copy"
 $subPath = Get-Item (Join-Path $packagePath $PackageDirectory)
+Write-Verbose "Zip Package: Install '$(Split-Path -Leaf $subPath)' to '$DestinationPath'"
 Move-Item $subPath -Destination $DestinationPath -Force
