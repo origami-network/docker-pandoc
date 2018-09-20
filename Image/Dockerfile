@@ -18,4 +18,8 @@ COPY --from=pandoc ${ARG_PANDOC_PATH} ${ARG_PANDOC_PATH}
 
 WORKDIR ${ARG_PANDOC_PATH}
 
-# TODO: Define entrypoint
+# FIXME: add for debug purpose remove after sucessfull execution 
+CMD pandoc.exe
+
+SHELL ["cmd", "/S", "/C"]
+ENTRYPOINT [ "pandoc.exe" ]
