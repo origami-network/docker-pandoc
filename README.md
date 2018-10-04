@@ -56,6 +56,9 @@ For the file `input.markdown` located in `C:\Users\UserName\Documents\` folder, 
 See [specification](./Spec/Pandoc.Tests.ps1) for more examples.
 
 
-FIXME: contributing
+## Contributing
+
+In order to contribute to the project please fallow [Contributing Guidance](CONTRIBUTING.md).
+
 
 FIXME: license
