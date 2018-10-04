@@ -34,4 +34,7 @@ $script = @(
         Parameters = @{ ImageName = $Name }
     }
 )
-Invoke-Pester -Script $script -OutputFormat NUnitXml -OutputFile $ArtifactNUnitFile
+$tests = Invoke-Pester -PassThru -Script $script -OutputFormat NUnitXml -OutputFile $ArtifactNUnitFile
+if ($tests.FailedCount) {
+    Write-Error "Docker Image: failed test count $($tests.FailedCount)"
+}
