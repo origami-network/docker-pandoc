@@ -9,11 +9,23 @@ param (
 )
 
 
-Write-Warning "TODO: define specification"
-
 Describe "Pandoc image" {
-    It "need to be deifned" {
-        $true |
-            Should -Be $false
+    Context "from markdown" {
+
+        It "generates HTML" {
+            Write-Error "TODO: implement test case"
+        }
+
+        It "generates standalone HTML" {
+            Write-Error "TODO: implement test case"
+        }
+
+        It "generates Word" {
+            Write-Error "TODO: implement test case"
+        }
+
+        It "generates ePUB" {
+            Write-Error "TODO: implement test case"
+        }
     }
 }
