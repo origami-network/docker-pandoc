@@ -1,6 +1,11 @@
-TODO: Add status table
+FIXME: Add status table
 
-# docker-pandoc
+# FIXME: docker-pandoc
 
-TODO: prepare documentation
-TODO: populate documentation on docker hub
+FIXME: description
+
+FIXME: usage
+
+FIXME: contributing
+
+FIXME: license
