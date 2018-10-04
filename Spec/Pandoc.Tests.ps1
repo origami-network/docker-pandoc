@@ -8,6 +8,8 @@ param (
     $ModulesPath = (Join-Path $Here "Modules")
 )
 
+Import-Module (Join-Path $ModulesPath 'TestDrive.psm1') -Force
+
 
 Describe "Pandoc image" {
     Context "from markdown" {
