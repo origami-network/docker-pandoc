@@ -28,7 +28,33 @@ Hello *pandoc*!
 
 It is possible to convert back from HTML to markdown as well.
 
-FIXME: usage
+## Usage
+
+This Docker image allows to use Pandoc without need of installation on Windows 2016 and Windows 10.
+It accepts all parameters as specified by [Pandoc command line](https://pandoc.org/MANUAL.html#using-pandoc).
+
+
+### Pull Docker image
+
+Before start the image need to be pulled from the [Docker Hub](https://hub.docker.com/r/origaminetwork/pandoc/).
+
+```console
+> docker pull origaminetwork/pandoc:X.X.X.X.Y
+```
+
+Where `X.X.X.X.Y` is the version of the image.
+
+
+### Generating HTML from markdown
+
+For the file `input.markdown` located in `C:\Users\UserName\Documents\` folder, fallowing command will generate `output.html` document file.
+
+```console
+> docker run -v C:\Users\UserName\Documents:C:\Volume origaminetwork/pandoc:X.X.X.X.Y -f markdown -t html C:\Volume\input.markdown -o C:\Volume\output.html
+```
+
+See [specification](./Spec/Pandoc.Tests.ps1) for more examples.
+
 
 FIXME: contributing
 
