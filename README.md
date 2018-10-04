@@ -61,4 +61,6 @@ See [specification](./Spec/Pandoc.Tests.ps1) for more examples.
 In order to contribute to the project please fallow [Contributing Guidance](CONTRIBUTING.md).
 
 
-FIXME: license
+## License
+
+The project is licensed under [MIT License](LICENSE).
