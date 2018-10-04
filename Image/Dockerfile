@@ -17,9 +17,5 @@ ARG ARG_PANDOC_PATH=C:\\Pandoc
 COPY --from=pandoc ${ARG_PANDOC_PATH} ${ARG_PANDOC_PATH}
 
 WORKDIR ${ARG_PANDOC_PATH}
-
-# FIXME: add for debug purpose remove after sucessfull execution 
-CMD pandoc.exe --help
-
 SHELL ["cmd", "/S", "/C"]
 ENTRYPOINT [ "pandoc.exe" ]
